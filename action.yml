@@ -87,5 +87,7 @@ outputs:
 runs:
   using: composite
   steps:
-    - run: npm install -g corepack
-    - run: yarn node ${{ github.action_path }}/main.js
+    - shell: pwsh
+      run: npm install -g corepack
+    - shell: pwsh
+      run: yarn node ${{ github.action_path }}/main.js
