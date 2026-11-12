@@ -85,5 +85,7 @@ outputs:
   artifacts:
     description: JSON array with details about found artifacts
 runs:
-  using: node24
-  main: main.js
+  using: composite
+  steps:
+    - run: npm install -g corepack
+    - run: yarn node ${{ github.action_path }}/main.js
