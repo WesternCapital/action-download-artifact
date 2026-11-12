@@ -90,4 +90,5 @@ runs:
     - shell: pwsh
       run: npm install -g corepack
     - shell: pwsh
-      run: yarn node ${{ github.action_path }}/main.js
+      working-directory: ${{ github.action_path }} 
+      run: yarn node ./main.js
